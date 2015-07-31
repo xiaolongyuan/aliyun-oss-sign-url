@@ -121,52 +121,52 @@
                     <excludes>
                         <!--<exclude>**/CollectionBillTestCase.java</exclude>-->
                     </excludes>
-                    <skip>false</skip>  <!-- 略过单元测试 -->
+                    <skip>true</skip>  <!-- 略过单元测试 -->
                     <testFailureIgnore>true</testFailureIgnore> <!-- 当Maven 遇到一个测试失败，它默认的行为是停止当前的构建。 如果你希望继续构建项目，即使 Surefire 插件遇到了失败的单元测试，你就需要设置 Surefire 的testFailureIgnore 这个配置属性为 true -->
                 </configuration>
             </plugin>
 
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>  <!-- 在jar包中增加依赖jar路径说明 -->
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.garfield.gui.Main</mainClass>
-                        </manifest>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-jar-plugin</artifactId>-->
+                <!--<version>2.4</version>-->
+                <!--<configuration>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<addClasspath>true</addClasspath>  &lt;!&ndash; 在jar包中增加依赖jar路径说明 &ndash;&gt;-->
+                            <!--<classpathPrefix>lib/</classpathPrefix>-->
+                            <!--<mainClass>com.garfield.gui.Main</mainClass>-->
+                        <!--</manifest>-->
 
-                        <!-- 用maven在MANIFEST.MF资料中的Class-Path中增加当前目录(.)  -->
-                        <manifestEntries>
-                            <Class-Path>.</Class-Path>
-                        </manifestEntries>
+                        <!--&lt;!&ndash; 用maven在MANIFEST.MF资料中的Class-Path中增加当前目录(.)  &ndash;&gt;-->
+                        <!--<manifestEntries>-->
+                            <!--<Class-Path>.</Class-Path>-->
+                        <!--</manifestEntries>-->
 
-                    </archive>
-                </configuration>
-            </plugin>
+                    <!--</archive>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
         </plugins>
 
 
-        <resources>
-            <!--打包进XML等文件，排除java及版本控制文件  -->
-            <resource>
-                <directory>src/test/java</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                    <exclude>**/.svn/*</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.*</include>
-                    <include>**/*.*</include>
-                </includes>
-            </resource>
-        </resources>
+        <!--<resources>-->
+            <!--&lt;!&ndash;打包进XML等文件，排除java及版本控制文件  &ndash;&gt;-->
+            <!--<resource>-->
+                <!--<directory>src/test/java</directory>-->
+                <!--<excludes>-->
+                    <!--<exclude>**/*.java</exclude>-->
+                    <!--<exclude>**/.svn/*</exclude>-->
+                <!--</excludes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<includes>-->
+                    <!--<include>**/*.*</include>-->
+                    <!--<include>**/*.*</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+        <!--</resources>-->
     </build>
 </project>
