@@ -1,0 +1,17 @@
+target
+build
+rebel*.xml
+*.jasper
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.war
+.bpmn2d
+*/.bpmn/
+.idea/
+*.iml
+.settings
+*.classpath
+*.project
+gen
+out
