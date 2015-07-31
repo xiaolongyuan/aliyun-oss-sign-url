@@ -41,8 +41,32 @@ public class UrlSignUtils {
                                            String key,
                                            URI endpoint
 
-    )
-            throws MalformedURLException {
+    ){
+        return generatePresignedUrl(accessId, accessKey, null, Boolean.FALSE, method, expiration,
+                bucketName, key, endpoint, null, null, new HashMap<String, String>(), new HashMap<String, String>(), null);
+
+    }
+
+    /**
+     * 主 A/K 方式获取
+     * @param accessId
+     * @param accessKey
+     * @param expiration
+     * @param bucketName
+     * @param key
+     * @param endpoint 阿里云三级域名、自定义的oss bucket域名 注意 目前采用sts方式暂不支持阿里云IMG服务（即cdn域名无法使用）
+     * @return
+     * @throws MalformedURLException
+     */
+    public static URL generatePresignedUrl(String accessId, String accessKey,
+                                           Date expiration,
+                                           String bucketName,
+                                           String key,
+                                           URI endpoint
+
+    ) {
+
+        HttpMethod method =  HttpMethod.GET;
         return generatePresignedUrl(accessId, accessKey, null, Boolean.FALSE, method, expiration,
                 bucketName, key, endpoint, null, null, new HashMap<String, String>(), new HashMap<String, String>(), null);
 
